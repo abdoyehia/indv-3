@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+
+class Odometer{
+  private:
+    double miles;
+    double fuel_efficiency;
+
+  public:
+  Odometer(){
+    miles = 0.0;
+    fuel_efficiency = 0.0;
+  }
+
+  void reset(){
+    miles = 0.0;
+    //fuel_efficiency = 0.0;
+  }
+
+  void setFuelEfficiency(double Fuel_efficiency){
+    fuel_efficiency = Fuel_efficiency;
+  }
+
+  void logMiles(double Miles){
+    miles = Miles;
+  }
+
+  double gasConsumed(){
+    return miles/fuel_efficiency;
+  }
+
+
+
+};
+
+
+int main()
+{
+  
+ Odometer trip1, trip2;
+ trip1.reset();
+ trip1.setFuelEfficiency(45);
+ trip1.logMiles(100);
+ cout << "For your fuel-efficient small car:" << endl;
+ cout << "After 100 miles, " << trip1.gasConsumed() <<
+ " gallons were used." << endl;
+ trip1.logMiles(50);
+ cout << "After another 50 miles, " << trip1.gasConsumed() <<
+ " gallons were used." << endl; 
+
+ cout << endl;
+
+ trip2.reset();
+ trip2.setFuelEfficiency(13);
